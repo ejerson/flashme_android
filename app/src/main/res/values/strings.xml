@@ -1,0 +1,14 @@
+<resources>
+  <string name="app_name">FlashMe3</string>
+  <string name="action_settings">Settings</string>
+
+
+  <string name="enter_deck_name">Deck 1</string>
+  <string name="add_deck_button">Add Deck</string>
+  <string name="recent_deck">Recent Deck</string>
+  <string name="recent_deck_button">Recent Deck</string>
+  <string name="deck_list">Deck List</string>
+  <string name="deck_tutorial_button">Tutorial Deck</string>
+  <string name="add_card_button">Add Card</string>
+  <string name="review_card_button">Review Card</string>
+</resources>

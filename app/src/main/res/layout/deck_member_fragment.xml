@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  android:orientation="vertical"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent">
+
+  <LinearLayout
+    android:id="@+id/content_deck_view"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
+
+    <Button
+      android:id="@+id/button_add_card"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="5dp"
+      android:text="@string/add_card_button"
+      />
+
+    <Button
+      android:id="@+id/button_review_card"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="5dp"
+      android:onClick="sendMessage"
+      android:text="@string/review_card_button"/>
+
+    <Button
+      android:id="@+id/button_return_todeck"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:padding="5dp"
+      android:onClick="goToDeckFragment"
+      android:text="@string/deck_list"/>
+
+  </LinearLayout>
+
+
+
+</LinearLayout>
