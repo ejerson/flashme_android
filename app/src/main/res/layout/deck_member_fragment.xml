@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
-  android:id="@+id/deck_member_fragment_layout"
+  android:id="@+id/deck_member_fragment"
   android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
@@ -46,6 +46,7 @@
       android:layout_height="wrap_content"
       android:padding="5dp"
       android:text="@string/add_card_button"
+      android:onClick="goToCardCreationFragment"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintLeft_toRightOf="parent"
       app:layout_constraintRight_toLeftOf="@+id/button_review_card"/>

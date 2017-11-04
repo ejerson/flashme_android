@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.LinearLayout;
+import edu.cnm.deepdive.eb.flashme3.fragments.CardCreationFragment;
 import edu.cnm.deepdive.eb.flashme3.fragments.DeckFragment;
 import edu.cnm.deepdive.eb.flashme3.fragments.DeckMemberFragment;
 
@@ -18,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
+    setContentView(R.layout.content_main_fragment);
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
@@ -35,6 +38,12 @@ public class MainActivity extends AppCompatActivity {
 //    });
   }
 
+  private void newDeckButton() {
+    LinearLayout mainLayout = (LinearLayout)findViewById(R.id.content_main_fragment);
+    Button addButton = new Button(this);
+    addButton.setText("add");
+    mainLayout.addView(addButton);
+  }
 
   private void mainScreenDeckFragment() {
     if (fragment == null) {
@@ -58,8 +67,15 @@ public class MainActivity extends AppCompatActivity {
     Bundle args = new Bundle();
     fragment.setArguments(args); // bundle
     manager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
-
   }
+
+  public void goToCardCreationFragment(View view) {
+    fragment = new CardCreationFragment();
+    Bundle args = new Bundle();
+    fragment.setArguments(args); // bundle
+    manager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+  }
+
   @Override
   public boolean onCreateOptionsMenu(Menu menu) {
     // Inflate the menu; this adds items to the action bar if it is present.
