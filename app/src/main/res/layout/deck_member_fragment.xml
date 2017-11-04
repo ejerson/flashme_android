@@ -1,14 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/deck_member_fragment_layout"
   android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
-  <LinearLayout
-    android:id="@+id/content_deck_view"
-    android:layout_width="wrap_content"
+
+  <android.support.constraint.ConstraintLayout
+    android:id="@+id/leitner_status"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal">
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintRight_toLeftOf="parent"
+    app:layout_constraintLeft_toRightOf="parent">
+
+    <TextView
+      android:layout_width="352dp"
+      android:layout_height="80dp"
+      android:paddingTop="15dp"
+      android:text="Leitner Status"
+      android:textAlignment="center"
+      android:textSize="20dp"
+      app:layout_constraintTop_toTopOf="parent"
+     app:layout_constraintRight_toLeftOf="parent"
+      app:layout_constraintLeft_toRightOf="parent"/>
+
+  </android.support.constraint.ConstraintLayout>
+
+
+  <android.support.constraint.ConstraintLayout
+    android:id="@+id/content_deck_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:orientation="horizontal"
+    app:layout_constraintLeft_toRightOf="parent"
+    app:layout_constraintRight_toLeftOf="parent"
+    app:layout_constraintBottom_toBottomOf="parent">
 
     <Button
       android:id="@+id/button_add_card"
@@ -16,7 +46,9 @@
       android:layout_height="wrap_content"
       android:padding="5dp"
       android:text="@string/add_card_button"
-      />
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toRightOf="parent"
+      app:layout_constraintRight_toLeftOf="@+id/button_review_card"/>
 
     <Button
       android:id="@+id/button_review_card"
@@ -24,7 +56,10 @@
       android:layout_height="wrap_content"
       android:padding="5dp"
       android:onClick="sendMessage"
-      android:text="@string/review_card_button"/>
+      android:text="@string/review_card_button"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toRightOf="@+id/button_add_card"
+      app:layout_constraintRight_toLeftOf="@+id/button_return_todeck"/>
 
     <Button
       android:id="@+id/button_return_todeck"
@@ -32,10 +67,13 @@
       android:layout_height="wrap_content"
       android:padding="5dp"
       android:onClick="goToDeckFragment"
-      android:text="@string/deck_list"/>
+      android:text="@string/deck_list"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintLeft_toRightOf="@+id/button_review_card"
+      app:layout_constraintRight_toLeftOf="parent"/>
 
-  </LinearLayout>
+  </android.support.constraint.ConstraintLayout>
 
 
 
-</LinearLayout>
+</android.support.constraint.ConstraintLayout>
