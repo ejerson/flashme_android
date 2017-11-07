@@ -17,10 +17,7 @@
     android:text="@string/deck_list"
     />
 
-  <ListView
-    android:id="@+id/database_list"
-    android:layout_width="match_parent"
-    android:layout_height="400dp"/>
+
 
   <android.support.constraint.ConstraintLayout
     android:layout_width="match_parent"
@@ -31,7 +28,7 @@
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:text="Add Deck"
-      android:onClick="showAddDialog"
+      android:onClick="goToDataBaseActivity"
       android:layout_gravity="bottom"
       app:layout_constraintBottom_toBottomOf="parent"
       app:layout_constraintRight_toLeftOf="parent"

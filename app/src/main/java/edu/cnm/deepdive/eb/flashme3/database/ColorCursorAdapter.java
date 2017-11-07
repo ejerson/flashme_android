@@ -7,7 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CursorAdapter;
 import android.widget.TextView;
-import edu.cnm.deepdive.eb.learndatabase.R;
+import edu.cnm.deepdive.eb.flashme3.R;
 
 public class ColorCursorAdapter extends CursorAdapter {
 
@@ -22,13 +22,9 @@ public class ColorCursorAdapter extends CursorAdapter {
 
   @Override
   public void bindView(View view, Context context, Cursor cursor) {
-//    String id = cursor.getString(0);
     String content = cursor.getString(1);
-//    String color = cursor.getString(2);
-
     TextView textView = (TextView) view;
     textView.setText(content);
-//    textView.setText(id);
-//    textView.setBackgroundColor(Color.parseColor(color));
+
   }
 }

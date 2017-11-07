@@ -15,5 +15,5 @@
   <string name="back_text">Back Text</string>
   <string name="next">Next</string>
   <string name="dialogue_cancel">Cancel</string>
-  <string name="dialogue_ok">Cancel</string>
+  <string name="dialogue_ok">Ok</string>
 </resources>

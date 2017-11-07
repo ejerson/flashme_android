@@ -7,20 +7,23 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DatabaseHelper extends SQLiteOpenHelper {
 
-  public static final String DATABASE_NAME = "LIST_CONTENT";
+  public static final String DATABASE_NAME = "LIST_DECK";
   public static final String DATABASE_TABLE = "LIST_TABLE";
+  public static final String DATABASE_CARD_TABLE = "CARD_TABLE";
 
   public static final int DATABASE_VERSION = 1;
 
   public static final String ID_COLUMN = "_id";
   public static final String CONTENT_COLUMN = "content";
+  public static final String CARD_NAME_COLUMN = "card_name";
 //  public static final String COLOR_COLUMN = "color";
 
   private static final String SCRIPT_CREATE_DATABASE =
       "CREATE TABLE " + DATABASE_TABLE + " (" + ID_COLUMN + " integer primary key autoincrement, "
-          + CONTENT_COLUMN + " text not null)"
-      ; //remove this if I want to add the color back
-//          + COLOR_COLUMN + " text not null);";
+          + CONTENT_COLUMN + " text not null)";
+//  private static final String SCRIPT_CREATE_CARD_DATABASE =
+//      "CREATE TABLE " + DATABASE_CARD_TABLE + " (" + ID_COLUMN + " integer primary key autoincrement, "
+//          + CARD_NAME_COLUMN + " text not null)";
 
   public DatabaseHelper(Context context) {
     super(context, DATABASE_NAME+".db", null, DATABASE_VERSION);
@@ -29,6 +32,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
   @Override
   public void onCreate(SQLiteDatabase sqLiteDatabase) {
     sqLiteDatabase.execSQL(SCRIPT_CREATE_DATABASE);
+//    sqLiteDatabase.execSQL(SCRIPT_CREATE_CARD_DATABASE);
+
+
   }
 
   @Override
@@ -40,9 +46,13 @@ public class DatabaseHelper extends SQLiteOpenHelper {
   public long insert(SQLiteDatabase db, String content) {  // add String color parameter if I want color back
     ContentValues contentValues = new ContentValues();
     contentValues.put(CONTENT_COLUMN, content);
-//    contentValues.put(ID_COLUMN, id);
     return db.insert(DATABASE_TABLE, null, contentValues);
-//    contentValues.put(COLOR_COLUMN, color);
-
   }
+
+  public long insertCardName(SQLiteDatabase db, String card_name) {  // add String color parameter if I want color back
+    ContentValues contentValues = new ContentValues();
+    contentValues.put(CARD_NAME_COLUMN, card_name);
+    return db.insert(DATABASE_CARD_TABLE, null, contentValues);
+  }
+
 }
