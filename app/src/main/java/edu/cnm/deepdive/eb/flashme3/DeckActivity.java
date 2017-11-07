@@ -10,13 +10,14 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.Toast;
 import edu.cnm.deepdive.eb.flashme3.database.ColorCursorAdapter;
 import edu.cnm.deepdive.eb.flashme3.database.DatabaseHelper;
 import edu.cnm.deepdive.eb.flashme3.fragments.AddContentFragment;
 
 public class DeckActivity extends AppCompatActivity {
 
-  public DatabaseHelper dbHelper;
+  public static DatabaseHelper dbHelper;
   private ListView databaseListView;
   private SQLiteDatabase sqLiteDatabase;
 
@@ -40,14 +41,46 @@ public class DeckActivity extends AppCompatActivity {
         databaseListView.setOnItemClickListener(new OnItemClickListener() {
       @Override
       public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+//        SQLiteDatabase db;
+//        db = dbHelper.getWritableDatabase();
+//        String str="INSERT INTO love (_id, card_name) VALUES ('10', 'yeye');";
+//        db.execSQL(str);
+
+        getAllData();
 //        startActivity(new Intent(DeckActivity.this, CardActivity.class));
-        SQLiteDatabase db;
-        db = dbHelper.getWritableDatabase();
-        String str="INSERT INTO love VALUES (_id, card_name) (1, ejerson, 2 is, 3, awesome, 4, wohoooo);";
-        db.execSQL(str);
+
+        // use a class that I can instantiate, which contains a way for me to get items from
+        // the database
+
+        // When a user clicks on a deck item list, they are sent to that deck's
+        // fragment or activity.
+                // SELECT
+        //
+
         }
     });
 
+
+
+
+  }
+
+  public Cursor getAllData() {
+    SQLiteDatabase db;
+    db = dbHelper.getWritableDatabase();
+    Cursor cursor = db.rawQuery("SELECT card_name FROM love WHERE _id = '1'", null);
+    // TODO find a way to see if I am able to get the value of my query
+
+
+    if (cursor.moveToFirst()) {
+      String mValue = String.valueOf(cursor);
+      Toast toast = Toast.makeText(this, mValue, Toast.LENGTH_SHORT);
+      toast.show();
+    }
+   
+
+    return cursor;
   }
 
   // query the database
