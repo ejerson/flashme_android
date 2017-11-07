@@ -20,8 +20,8 @@ public class CardCreationFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
-    View v = inflater.inflate(R.layout.card_creation_fragment, container, false);
-    return v;
+    View view = inflater.inflate(R.layout.card_creation_fragment, container, false);
+    return view;
   }
 
 }

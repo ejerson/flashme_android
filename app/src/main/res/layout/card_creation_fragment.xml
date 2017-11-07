@@ -2,23 +2,15 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:app="http://schemas.android.com/apk/res-auto"
   xmlns:tools="http://schemas.android.com/tools"
+  android:id="@+id/card_creation_fragment"
   android:orientation="vertical"
   android:layout_width="match_parent"
   android:layout_height="match_parent">
 
-  <android.support.constraint.ConstraintLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintLeft_toRightOf="parent"
-    app:layout_constraintRight_toLeftOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
-
     <EditText
       android:id="@+id/front_text"
-      android:layout_width="match_parent"
+      android:layout_width="0dp"
       android:layout_height="100dp"
-      android:layout_weight="1"
       android:gravity="center"
       android:hint="@string/front_text"
       app:layout_constraintLeft_toRightOf="parent"
@@ -30,9 +22,8 @@
 
     <EditText
       android:id="@+id/back_text"
-      android:layout_width="match_parent"
+      android:layout_width="0dp"
       android:layout_height="100dp"
-      android:layout_weight="1"
       android:gravity="center"
       android:hint="@string/back_text"
       app:layout_constraintLeft_toRightOf="parent"
@@ -41,6 +32,7 @@
       app:layout_constraintTop_toBottomOf="@+id/front_text"
       android:layout_margin="10dp"
       />
+
 
     <Button
       android:id="@+id/button_choose_keyword"
@@ -51,8 +43,6 @@
       app:layout_constraintTop_toBottomOf="@+id/back_text"
       app:layout_constraintLeft_toRightOf="parent"
       android:text="@string/next"/>
-
-
 
     <Button
       android:id="@+id/button_return_todeck"
@@ -66,7 +56,5 @@
       android:text="@string/deck_list"
       />
 
-
-  </android.support.constraint.ConstraintLayout>
 
 </android.support.constraint.ConstraintLayout>

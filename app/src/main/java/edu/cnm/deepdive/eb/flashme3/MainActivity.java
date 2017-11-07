@@ -8,42 +8,28 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.LinearLayout;
 import edu.cnm.deepdive.eb.flashme3.fragments.CardCreationFragment;
 import edu.cnm.deepdive.eb.flashme3.fragments.DeckFragment;
 import edu.cnm.deepdive.eb.flashme3.fragments.DeckMemberFragment;
+
+// TODO create a database
 
 public class MainActivity extends AppCompatActivity {
   FragmentManager manager = getSupportFragmentManager();
   Fragment fragment = manager.findFragmentById(R.id.fragment_container);
 
+
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    setContentView(R.layout.content_main_fragment);
+    setContentView(R.layout.content_main);
+
     Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
     setSupportActionBar(toolbar);
 
-
     mainScreenDeckFragment();
-
-//    FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//    fab.setOnClickListener(new View.OnClickListener() {
-//      @Override
-//      public void onClick(View view) {
-//        Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//            .setAction("Action", null).show();
-//      }
-//    });
   }
 
-  private void newDeckButton() {
-    LinearLayout mainLayout = (LinearLayout)findViewById(R.id.content_main_fragment);
-    Button addButton = new Button(this);
-    addButton.setText("add");
-    mainLayout.addView(addButton);
-  }
 
   private void mainScreenDeckFragment() {
     if (fragment == null) {
@@ -59,6 +45,8 @@ public class MainActivity extends AppCompatActivity {
     Bundle args = new Bundle();
     fragment.setArguments(args); // bundle
     manager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+
+
   }
 
   public void goToDeckMemberFragment(View view) {
@@ -67,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
     Bundle args = new Bundle();
     fragment.setArguments(args); // bundle
     manager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+
   }
 
   public void goToCardCreationFragment(View view) {
