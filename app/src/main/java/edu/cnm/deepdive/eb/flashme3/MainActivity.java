@@ -8,6 +8,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import edu.cnm.deepdive.eb.flashme3.fragments.AddContentFragment;
 import edu.cnm.deepdive.eb.flashme3.fragments.CardCreationFragment;
 import edu.cnm.deepdive.eb.flashme3.fragments.DeckFragment;
 import edu.cnm.deepdive.eb.flashme3.fragments.DeckMemberFragment;
@@ -63,6 +64,11 @@ public class MainActivity extends AppCompatActivity {
     Bundle args = new Bundle();
     fragment.setArguments(args); // bundle
     manager.beginTransaction().replace(R.id.fragment_container, fragment).commit();
+  }
+
+  public void showAddDialog(View view) {
+    AddContentFragment dialog = new AddContentFragment();
+    dialog.show(getSupportFragmentManager(), "AddContentFragment");
   }
 
   @Override

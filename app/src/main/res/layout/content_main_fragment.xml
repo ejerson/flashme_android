@@ -5,59 +5,40 @@
   android:orientation="vertical"
   android:id="@+id/content_main_fragment"
   android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:weightSum="1"
-  >
+  android:layout_height="match_parent">
 
-  <LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:gravity="top"
-    android:orientation="vertical"
-    android:layout_weight="1">
   <TextView
     android:id="@+id/deck_list_title"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="@string/deck_list"
     android:textSize="20dp"
-    android:paddingTop="20dp"
-    android:layout_gravity="center"/>
-
-  </LinearLayout>
-
-
-<android.support.constraint.ConstraintLayout
-  android:layout_width="match_parent"
-  android:layout_height="wrap_content"
-  android:orientation="horizontal"
-  android:gravity="center">
-  <EditText
-    android:id="@+id/id_search_EditText"
-    android:layout_width="200dp"
-    android:layout_height="wrap_content"
-    android:hint="Enter Deck Name"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
-    app:layout_constraintLeft_toRightOf="parent"
-    app:layout_constraintRight_toLeftOf="@+id/id_search_button"
-    app:layout_constraintBottom_toBottomOf="parent"/>
-  <Button
-    android:id="@+id/id_search_button"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:text="Add Deck"
-    android:paddingLeft="5dp"
-    android:paddingRight="5dp"
-    app:layout_constraintLeft_toRightOf="@+id/id_search_EditText"
-    app:layout_constraintRight_toLeftOf="parent"
-    app:layout_constraintBottom_toBottomOf="parent"/>
-</android.support.constraint.ConstraintLayout>
+    android:gravity="center"
+    android:layout_marginTop="20dp"
+    android:text="@string/deck_list"
+    />
 
   <ListView
     android:id="@+id/database_list"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"/>
+    android:layout_height="400dp"/>
+
+  <android.support.constraint.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <Button
+      android:id="@+id/id_search_button"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Add Deck"
+      android:onClick="showAddDialog"
+      android:layout_gravity="bottom"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintRight_toLeftOf="parent"
+      app:layout_constraintLeft_toRightOf="parent"
+      app:layout_constraintBaseline_toBaselineOf="parent"/>
+
+  </android.support.constraint.ConstraintLayout>
 
 
 </LinearLayout>

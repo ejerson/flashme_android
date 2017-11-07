@@ -1,5 +1,5 @@
 <resources>
-  <string name="app_name">FlashMe3</string>
+  <string name="app_name">Flash Me</string>
   <string name="action_settings">Settings</string>
 
 
@@ -14,6 +14,6 @@
   <string name="front_text">Front</string>
   <string name="back_text">Back Text</string>
   <string name="next">Next</string>
-  <string name="dialogue_ok">Ok</string>
   <string name="dialogue_cancel">Cancel</string>
+  <string name="dialogue_ok">Cancel</string>
 </resources>
